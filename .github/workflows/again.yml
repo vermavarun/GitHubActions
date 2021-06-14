@@ -12,3 +12,7 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: Sleep for 30 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '30s'
