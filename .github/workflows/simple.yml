@@ -5,10 +5,8 @@ on: [push]
 jobs:
     run-shell-command:
       runs-on: ubuntu-latest
+      if: ${{ github.event.repository.name }} == 'githubactions'
       steps:
-      - name: check if to run
-        if: ${{ github.event.repository.name }} == 'githubactions'
-        run: exit
       - name: echo a string
         run: echo "Hello World"
       - name: multiline script
