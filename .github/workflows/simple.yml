@@ -7,8 +7,8 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: check if to run
-        if: ${{ github.event.repository.name }} != 'githubactions'
-        run: exit 1
+        if: ${{ github.event.repository.name }} == 'githubactions'
+        run: exit 0
       - name: echo a string
         run: echo "Hello World"
       - name: multiline script
