@@ -10,8 +10,7 @@ jobs:
         run: echo "Hello World"
       - name: multiline script
         run: |
-          node -v
-          npm -v
+          nuget restore **/*.sln
       - name: Sleep for 30 seconds
         uses: jakejarvis/wait-action@master
         with:
