@@ -1,0 +1,18 @@
+name: Shell Commands Again
+
+on: [push]
+
+jobs:
+    run-shell-command-again:
+      runs-on: ubuntu-latest
+      steps:
+      - name: echo a string
+        run: echo "Hello World"
+      - name: multiline script
+        run: |
+          node -v
+          npm -v
+      - name: Sleep for 30 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
