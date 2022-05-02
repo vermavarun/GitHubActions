@@ -13,4 +13,4 @@ jobs:
         run: |
           node -v
           npm -v
-          nuget restore **/*.sln
+          nuget restore *.sln
