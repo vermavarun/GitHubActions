@@ -10,8 +10,8 @@ jobs:
         run: echo "Hello World"
       - name: multiline script
         run: |
-          nuget restore **/*.sln
-      - name: Sleep for 30 seconds
+          nuget restore *.sln
+      - name: Sleep for 3 seconds
         uses: jakejarvis/wait-action@master
         with:
           time: '3s'
