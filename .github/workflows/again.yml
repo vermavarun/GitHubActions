@@ -3,16 +3,20 @@ name: Shell Commands Again
 on: [push]
 
 jobs:
-    run-shell-command-again:
-      runs-on: ubuntu-latest
-      steps:
-      - name: echo a string
-        run: echo "Hello World"
-      - name: multiline script
-        run: |
-          node -v
-          npm -v
-      - name: Sleep for 30 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '30s'
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+     - name: Setup .NET
+       uses: actions/setup-dotnet@v2
+       with:
+        dotnet-version: 6.0.x
+     
+     - name: Add msbuild to PATH
+       uses: microsoft/setup-msbuild@v1.0.2
+     - name: Clean and Restore dependencies
+       run: |
+          dotnet nuget add source --name SEEDP.Power "https://sede-ds-adp.pkgs.visualstudio.com/ee16d3a9-7ce8-4103-b3e8-f12a4f35fc22/_packaging/SEEDP.Power/nuget/v3/index.json" -u "${{ env.NUGET_USER }}" -p "${{ env.NUGET_PAT }}" --store-password-in-clear-text
+          dotnet nuget add source --name SEDP.Core "https://sede-ds-adp.pkgs.visualstudio.com/4b55d100-8e50-46cc-ab7b-ac35eaf91bfe/_packaging/SEDP.Core/nuget/v3/index.json" -u "${{ env.NUGET_USER }}" -p "${{ env.NUGET_PAT }}" --store-password-in-clear-text
+          dotnet restore
+          msbuild  "${{ env.SLN_FILE }}" /property:Configuration=Release -t:clean -restore 
