@@ -6,7 +6,7 @@ jobs:
     steps:      
       - name: Setup Azure SPN Certificate file inside the runner
         env:
-          CERT: ${{ secrets.CERTIFICATE }}
+          CERT: ${{ secrets.SPN }}
         run: |
           echo "$CERT" > file.pem      
       - name: Login to Azure
