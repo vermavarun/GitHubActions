@@ -18,8 +18,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 'tag-1'
-          release_name: 'Release 1'
+          #tag_name: 'tag-1'
+          #release_name: 'Release 1'
           draft: false
           prerelease: false
       - name: Upload Release Asset
