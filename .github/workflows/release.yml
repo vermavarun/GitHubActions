@@ -1,6 +1,6 @@
-name: Shell Commands Again
+name: Release
 
-#on: [push]
+on: [push]
 
 jobs:
     create-release:
