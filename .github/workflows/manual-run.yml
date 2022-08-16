@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print value
-        run: echo ${{ env.release-tag }}
+        run: echo ${{ github.event.inputs.release-tag }}
