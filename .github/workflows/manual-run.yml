@@ -1,7 +1,6 @@
 name: Print environment variable
 
 on:
-  push:
   workflow_dispatch:
     inputs:
       release-tag:
