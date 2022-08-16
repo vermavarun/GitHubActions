@@ -1,6 +1,6 @@
 name: Shell Commands Again
 
-#on: [push]
+on: [push]
 
 jobs:
     run-shell-command-again:
