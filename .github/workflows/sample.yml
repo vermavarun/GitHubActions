@@ -2,7 +2,7 @@ name: Shell Commands Again
 
 on: [push]
 env:
-  DEPLOY_RELEASE_TO_AZURE: 'false'
+  DEPLOY_RELEASE_TO_AZURE: 'true'
 
 jobs:
     run-shell-command-again:
