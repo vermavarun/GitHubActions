@@ -10,9 +10,6 @@ jobs:
       steps:
       - name: echo a string
         run: echo "Hello World"
-      - name: multiline script
-        run: |
-          nuget restore *.sln
       - name: Sleep for 3 seconds
         if: env.DEPLOY_RELEASE_TO_AZURE == 'true'
         uses: jakejarvis/wait-action@master
