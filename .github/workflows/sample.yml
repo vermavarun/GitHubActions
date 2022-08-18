@@ -1,7 +1,9 @@
 name: Shell Commands Again
 
 on: [push]
-
+env:
+  DEPLOY_RELEASE_TO_AZURE: false
+  
 jobs:
     run-shell-command-again:
       runs-on: windows-latest
@@ -12,6 +14,7 @@ jobs:
         run: |
           nuget restore *.sln
       - name: Sleep for 3 seconds
+        if: ${{ env.DEPLOY_RELEASE_TO_AZURE }}
         uses: jakejarvis/wait-action@master
         with:
           time: '3s'
