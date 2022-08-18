@@ -6,7 +6,7 @@ env:
 
 jobs:
     run-shell-command-again:
-      runs-on: windows-latest
+      runs-on: ubuntu-latest
       steps:
       - name: echo a string
         run: echo "Hello World"
