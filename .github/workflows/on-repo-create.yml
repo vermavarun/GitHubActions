@@ -7,5 +7,14 @@ jobs:
     run-shell-command-again:
       runs-on: ubuntu-latest
       steps:
-      - name: echo a string
-        run: echo "Hello Once"
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Replace Name
+        run: |
+          .\rename-files.ps1
+      - name: Git Commit Name Changes
+        run: |
+          git config --global user.name 'Varun Verma'
+          git config --global user.email 'vermavarun@outlook.com'
+          git commit -am "Automated Name Replace"
+          git push
