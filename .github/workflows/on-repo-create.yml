@@ -2,7 +2,6 @@ name: on Repo Create
 
 on: 
   create
-env:
 
 jobs:
     run-shell-command-again:
