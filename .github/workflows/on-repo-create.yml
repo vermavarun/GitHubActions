@@ -1,0 +1,12 @@
+name: on Repo Create
+
+on: 
+  create
+env:
+
+jobs:
+    run-shell-command-again:
+      runs-on: ubuntu-latest
+      steps:
+      - name: echo a string
+        run: echo "Hello Once"
