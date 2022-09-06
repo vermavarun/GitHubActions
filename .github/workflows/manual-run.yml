@@ -1,4 +1,4 @@
-name: Print environment variable
+name: Manual Run
 
 on:
   workflow_dispatch:
@@ -13,3 +13,7 @@ jobs:
     steps:
       - name: Print value
         run: echo ${{ github.event.inputs.release-tag }}
+      - name: List Files
+        shell: pwsh
+        run: |
+          .\list-files.ps1
