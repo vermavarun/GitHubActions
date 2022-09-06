@@ -11,6 +11,8 @@ jobs:
   print-input:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Print value
         run: echo ${{ github.event.inputs.release-tag }}
       - name: List Files
